@@ -7,34 +7,33 @@
   src: url("../assets/fonts/Roboto-Bold.ttf") format("truetype");
 }
 
+:root {
+  --red: hsl(4, 100%, 67%);
+  --blue-800: hsl(234, 29%, 20%);
+  --blue-700: hsl(235, 18%, 26%);
+  --grey: hsl(0, 0%, 58%);
+  --white: hsl(0, 0%, 100%);
+  --fw-normal: 400;
+  --fw-bold: 700;
+  --ff-roboto: "Roboto", sans-serif;
+  --ff-roboto-bold: "Roboto-Bold", sans-serif;
+}
+
 * {
   box-sizing: border-box;
   margin: 0;
   padding: 0;
 }
-:root {
---red: hsl(4, 100%, 67%)
---blue-800: hsl(234, 29%, 20%)
---blue-700: hsl(235, 18%, 26%)
---grey: hsl(0, 0%,58%)
---white: hsl(0, 0%, 100%)
---fw-normal: 400;
---fw-bold: 700;
---ff-roboto: "Roboto", sans-serif;
---ff-roboto-bold: "Roboto-Bold", sans-serif;
-}
 
 body {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
   font-family: var(--ff-roboto);
   font-weight: var(--fw-normal);
-  background-color: var(--blue-800);
-  color: var(--white);
-  min-height: 100vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  padding: 20px;
-  position: relative;
+  background-color: var(--blue-700);
 }
 
 footer {

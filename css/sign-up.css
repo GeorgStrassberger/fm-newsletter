@@ -1,0 +1,94 @@
+/* SIGN UP */
+.sign-up {
+  width: 928px;
+  height: 642px;
+
+  background-color: var(--white);
+  padding: 1.5rem;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: row;
+  gap: 1.5rem;
+}
+
+.content {
+  padding: 4rem 2.5rem;
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  gap: 1rem;
+}
+
+.headline {
+  line-height: 1.5;
+  font-size: 3.5rem;
+  color: var(--blue-700);
+  font-weight: var(--fw-bold);
+  /* margin-bottom: 0.5rem; */
+}
+
+.context {
+  line-height: 1.5;
+  margin-bottom: 0.5rem;
+}
+
+.list {
+  margin-bottom: 1.5rem;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.list-item {
+  /* padding-block: 0.3rem; */
+  display: flex;
+  flex-direction: row;
+  gap: 1rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.tf-label {
+  display: flex;
+  flex-direction: column;
+}
+
+.tf-label small {
+  font-size: 0.75rem;
+  font-weight: var(--fw-bold);
+  color: var(--blue-800);
+}
+
+.tf-input {
+  margin-top: 0.75rem;
+  padding: 1.125rem 1.25rem;
+  font-size: 1rem;
+  border-radius: 0.4rem;
+  border: none;
+  outline: 1px solid var(--grey);
+  color: var(--grey);
+}
+
+.sub-btn {
+  padding: 1.125rem 1.25rem;
+  font-size: 1rem;
+  font-family: var(--ff-roboto-bold);
+  border-radius: 0.4rem;
+  border: none;
+  background-color: var(--blue-800);
+  outline: 1px solid var(--blue-800);
+  color: var(--white);
+}
+
+/* @media (max-width: 768px) {
+  .sign-up {
+    height: 100dvh;
+    width: 100%;
+  }
+} */
