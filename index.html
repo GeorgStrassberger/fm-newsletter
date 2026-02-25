@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -12,13 +12,14 @@
       sizes="32x32"
       href="./assets/images/favicon-32x32.png"
     />
+    <script src="./index.js"></script>
     <title>
       Frontend Mentor | Newsletter sign-up form with success message
     </title>
   </head>
   <body>
     <!-- Sign-up form start -->
-    <section class="sign-up">
+    <section id="sign" class="sign-up">
       <article class="content">
         <h2 class="headline">Stay updated!</h2>
 
@@ -82,9 +83,12 @@
             <p>And much more!</p>
           </li>
         </ul>
-        <form class="form">
-          <label class="tf-label" for="email"
-            ><small>Email address</small>
+        <form class="form" onsubmit="handleSubmit(event)">
+          <label class="tf-label" for="email">
+            <div class="tf-label-box">
+              <small class="tf-label-email">Email address</small>
+              <small id="email-hint" class="tf-label-hint">Valid email required</small>
+            </div>
             <input
               class="tf-input"
               type="email"
@@ -94,7 +98,7 @@
             />
           </label>
 
-          <button class="sub-btn" type="submit">
+          <button class="btn" type="submit">
             Subscribe to monthly newsletter
           </button>
         </form>
@@ -349,12 +353,21 @@
     <!-- Sign-up form end -->
 
     <!-- Success message start -->
-    <section class="message">
+    <section id="message" class="message">
+      <img
+        class="message-icon"
+        src="./assets/images/icon-success.svg"
+        alt="success icon"
+      />
+      <h2>Thanks for subscribing!</h2>
       <p>
-        Thanks for subscribing! A confirmation email has been sent to
-        ash@loremcompany.com. Please open it and click the button inside to
-        confirm your subscription. Dismiss message
+        A confirmation email has been sent to
+        <strong>ash@loremcompany.com</strong>. Please open it and click the
+        button inside to confirm your subscription.
       </p>
+      <button class="btn" onclick="handleDismissMessage()">
+        Dismiss message
+      </button>
     </section>
     <!-- Success message end -->
 

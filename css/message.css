@@ -1,4 +1,20 @@
 /* MESSAGE */
 .message {
-  display: none;
+    width: 400px;
+
+    background-color: var(--white);
+    color: var(--blue-800);
+
+    padding: 2.5rem;
+    border-radius: 2rem;
+
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.message-icon {
+    height: 64px;
+    height: 64px;
 }
