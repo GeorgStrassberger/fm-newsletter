@@ -1,6 +1,4 @@
 function init() {
-    showElemente("sign");
-    hideElement("message");
     const emailInput = document.getElementById("email");
     if (emailInput) {
         emailInput.addEventListener("input", handleEmailInput);
@@ -10,11 +8,14 @@ function init() {
 function showElemente(eleID) {
     const ele = document.getElementById(eleID);
     ele.classList.remove("d-none");
+    ele.setAttribute("aria-hidden", "false");
+
 }
 
 function hideElement(eleID) {
     const ele = document.getElementById(eleID);
     ele.classList.add("d-none");
+    ele.setAttribute("aria-hidden", "true");
 }
 
 function handleEmailInput(event) {
@@ -25,13 +26,15 @@ function handleEmailInput(event) {
 function isValidEmailAddress(input) {
     // const hasValue = input.value.trim() !== "";
     const isValid = input.checkValidity();
-    console.log("isValid", isValid)
     return isValid;
 }
 
 function toggleEmailHintVisibility(emailInput) {
     const hint = document.getElementById("email-hint");
-    hint.classList.toggle("is-visible", !isValidEmailAddress(emailInput));
+    const isValid = isValidEmailAddress(emailInput);
+
+    hint.classList.toggle("is-visible", !isValid);
+    hint.setAttribute("aria-hidden", String(isValid));
 }
 
 function renderMailAdresse(email) {
@@ -45,16 +48,25 @@ function handleSubmit(event) {
     const emailInput = event.target.email;
     const isValid = isValidEmailAddress(emailInput);
 
-    if (!isValid) return;
+    emailInput.setAttribute("aria-invalid", String(!isValid));
+    if (!isValid) {
+        toggleEmailHintVisibility(emailInput);
+        emailInput.focus();
+        return;
+    }
 
     renderMailAdresse(emailInput.value);
     showElemente("message");
     hideElement("sign");
+
+    document.querySelector(".message-headline").focus();
 }
 
 function handleDismissMessage() {
     showElemente("sign");
     hideElement("message");
+
+    document.getElementById("email").focus();
 }
 
 document.addEventListener("DOMContentLoaded", init)
