@@ -43,6 +43,11 @@
   gap: 1rem;
 }
 
+.list-icon {
+  height: 21px;
+  width: 21px;
+}
+
 .form {
   display: flex;
   flex-direction: column;
@@ -114,4 +119,35 @@
 
 .illustration {
   display: block;
+}
+
+@media (max-width: 552px) {
+  .sign-up {
+    position: absolute;
+    inset: 0;
+    border-radius: 0;
+    width: 100%;
+    padding: 0;
+    flex-direction: column-reverse;
+    gap: 0;
+  }
+
+  .content {
+    padding: 3rem 2rem;
+    flex: 1;
+    font-size: 1.25rem;
+  }
+
+  .headline {
+    font-size: 3rem;
+  }
+
+  .list-icon {
+    height: 24px;
+    width: 24px;
+  }
+
+  .illustration {
+    width: 100%;
+  }
 }

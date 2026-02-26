@@ -26,3 +26,17 @@
 .message-paragraph {
     line-height: 1.5;
 }
+
+@media (max-width: 552px) {
+    .message {
+        position: absolute;
+        inset: 0;
+        border-radius: 0;
+        width: 100%;
+        padding: 10rem 2rem 3rem 2rem;
+    }
+
+    .message article {
+        flex: 1;
+    }
+}
