@@ -87,7 +87,9 @@
           <label class="tf-label" for="email">
             <div class="tf-label-box">
               <small class="tf-label-email">Email address</small>
-              <small id="email-hint" class="tf-label-hint">Valid email required</small>
+              <small id="email-hint" class="tf-label-hint"
+                >Valid email required</small
+              >
             </div>
             <input
               class="tf-input"
@@ -106,6 +108,7 @@
       <!-- Image -->
       <aside>
         <svg
+          class="illustration"
           xmlns="http://www.w3.org/2000/svg"
           xmlns:xlink="http://www.w3.org/1999/xlink"
           width="400"
@@ -359,12 +362,14 @@
         src="./assets/images/icon-success.svg"
         alt="success icon"
       />
-      <h2>Thanks for subscribing!</h2>
-      <p>
-        A confirmation email has been sent to
-        <strong>ash@loremcompany.com</strong>. Please open it and click the
-        button inside to confirm your subscription.
-      </p>
+      <article>
+        <h2 class="message-headline">Thanks for subscribing!</h2>
+        <p class="message-paragraph">
+          A confirmation email has been sent to
+          <strong>ash@loremcompany.com</strong>. Please open it and click the
+          button inside to confirm your subscription.
+        </p>
+      </article>
       <button class="btn" onclick="handleDismissMessage()">
         Dismiss message
       </button>

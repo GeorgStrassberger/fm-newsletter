@@ -20,11 +20,11 @@ function hideElement(eleID) {
 function toggleEmailHintVisibility(emailInput) {
     const hint = document.getElementById("email-hint");
     const hasValue = emailInput.value.trim() !== "";
-    const isInvalid = hasValue && !emailInput.checkValidity();
+    const isInvalid = !emailInput.checkValidity();
     if (!hint) {
         return isInvalid;
     }
-    hint.classList.toggle("is-visible", isInvalid);
+    hint.classList.toggle("is-visible", hasValue && isInvalid);
     return isInvalid;
 }
 

@@ -1,8 +1,6 @@
 /* SIGN UP */
 .sign-up {
-  width: 928px;
-  height: 642px;
-
+  width: 58rem;
   background-color: var(--white);
   padding: 1.5rem;
   border-radius: 2rem;
@@ -13,7 +11,6 @@
 
 .content {
   padding: 4rem 2.5rem;
-  /* border: 1px solid red; */
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
@@ -21,11 +18,10 @@
 }
 
 .headline {
-  line-height: 1.5;
   font-size: 3.5rem;
-  color: var(--blue-700);
   font-weight: var(--fw-bold);
-  /* margin-bottom: 0.5rem; */
+  line-height: 1.5;
+  color: var(--blue-800);
 }
 
 .context {
@@ -42,7 +38,6 @@
 }
 
 .list-item {
-  /* padding-block: 0.3rem; */
   display: flex;
   flex-direction: row;
   gap: 1rem;
@@ -86,33 +81,37 @@
   margin-top: 0.75rem;
   padding: 1.125rem 1.25rem;
   font-size: 1rem;
+  font-weight: 400;
   border-radius: 0.4rem;
   border: none;
   outline: 1px solid var(--grey);
   color: var(--grey);
+  background-color: var(--white);
+  transition: outline-color 175ms ease-in-out, color 175ms ease-in-out,
+    background-color 175ms ease-in-out;
 }
 
-.tf-input:invalid {
+.tf-input::placeholder {
+  color: var(--grey);
+}
+
+.tf-input:not(:placeholder-shown):invalid {
   outline: 1px solid var(--red);
-  background-color: rgba(255, 182, 193, 0.655);
+  background-color: rgba(255, 182, 193, 0.15);
   color: var(--red);
 }
 
-.btn {
-  cursor: pointer;
-  padding: 1.125rem 1.25rem;
-  font-size: 1rem;
-  font-family: var(--ff-roboto-bold);
-  border-radius: 0.4rem;
-  border: none;
-  outline: none;
-  background-color: var(--blue-800);
+.tf-input:not(:placeholder-shown):valid {
   outline: 1px solid var(--blue-800);
-  color: var(--white);
-  transition: all 300ms ease-in-out;
+  color: var(--blue-800);
 }
 
-.btn:hover {
-  background-image: linear-gradient(90deg, red, orange);
-  transition: all 300ms ease-in-out;
+.tf-input:focus {
+  outline: 1px solid var(--blue-800);
+  background-color: var(--white);
+  color: var(--blue-800);
+}
+
+.illustration {
+  display: block;
 }

@@ -1,20 +1,28 @@
 /* MESSAGE */
 .message {
-    width: 400px;
-
+    width: 31.5rem;
     background-color: var(--white);
     color: var(--blue-800);
-
-    padding: 2.5rem;
+    padding: 4rem;
     border-radius: 2rem;
-
     display: flex;
-    gap: 1rem;
+    gap: 2rem;
     flex-direction: column;
     align-items: flex-start;
 }
 
 .message-icon {
-    height: 64px;
-    height: 64px;
+    height: 4rem;
+    height: 4rem;
+}
+
+.message-headline {
+    font-size: 3.5rem;
+    font-weight: var(--fw-bold);
+    line-height: 1;
+    margin-bottom: 1.5rem;
+}
+
+.message-paragraph {
+    line-height: 1.5;
 }
