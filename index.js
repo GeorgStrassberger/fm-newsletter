@@ -17,28 +17,37 @@ function hideElement(eleID) {
     ele.classList.add("d-none");
 }
 
-function toggleEmailHintVisibility(emailInput) {
-    const hint = document.getElementById("email-hint");
-    const hasValue = emailInput.value.trim() !== "";
-    const isInvalid = !emailInput.checkValidity();
-    if (!hint) {
-        return isInvalid;
-    }
-    hint.classList.toggle("is-visible", hasValue && isInvalid);
-    return isInvalid;
-}
-
 function handleEmailInput(event) {
+    isValidEmailAddress(event.target);
     toggleEmailHintVisibility(event.target);
 }
+
+function isValidEmailAddress(input) {
+    const hasValue = input.value.trim() !== "";
+    const isInvalid = input.checkValidity();
+    console.log("valid", hasValue && isInvalid);
+    return hasValue && isInvalid;
+}
+
+function toggleEmailHintVisibility(emailInput) {
+    const hint = document.getElementById("email-hint");
+    hint.classList.toggle("is-visible", !isValidEmailAddress(emailInput));
+}
+
+function renderMailAdresse(email) {
+    const emailAdresse = email || "ash@loremcompany.com";
+    const emailElement = document.getElementById('email-address');
+    emailElement.innerText = emailAdresse;
+};
 
 function handleSubmit(event) {
     event.preventDefault();
     const emailInput = event.target.email;
-    const isInvalid = toggleEmailHintVisibility(emailInput);
-    if (isInvalid) {
-        return;
-    }
+    const isValid = isValidEmailAddress(emailInput);
+
+    if (!isValid) return;
+
+    renderMailAdresse(emailInput.value);
     showElemente("message");
     hideElement("sign");
 }
@@ -47,7 +56,5 @@ function handleDismissMessage() {
     showElemente("sign");
     hideElement("message");
 }
-
-
 
 document.addEventListener("DOMContentLoaded", init)
