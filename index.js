@@ -23,10 +23,10 @@ function handleEmailInput(event) {
 }
 
 function isValidEmailAddress(input) {
-    const hasValue = input.value.trim() !== "";
-    const isInvalid = input.checkValidity();
-    console.log("valid", hasValue && isInvalid);
-    return hasValue && isInvalid;
+    // const hasValue = input.value.trim() !== "";
+    const isValid = input.checkValidity();
+    console.log("isValid", isValid)
+    return isValid;
 }
 
 function toggleEmailHintVisibility(emailInput) {
